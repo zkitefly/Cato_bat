@@ -39,7 +39,6 @@ goto home
 
 :home
 cls
-mode con cols=90 lines=38
 title Cato_bat
 color 8b
 echo. ª∂”≠ π”√ Cato_bat 1.0
