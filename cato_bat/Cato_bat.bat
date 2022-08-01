@@ -14,8 +14,8 @@
 ::dAsiuh18IRvcCxnZtBJQ
 ::cRYluBh/LU+EWAnk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJhZksaHErSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsFAlTMbCXqZg==
+::cxY6rQJ7JhzQF1fEqQJhZksaHErQXA==
+::ZQ05rAF9IBncCkqN+0xwdVsFAlTMbCXoZg==
 ::ZQ05rAF9IAHYFVzEqQITKQ9bcwaDKAs=
 ::eg0/rx1wNQPfEVWB+kM9LVsJDAeDKGSFBLQIiA==
 ::fBEirQZwNQPfEVWB+kM9LVsJDAeDKGSFBLQIiA==
@@ -39,7 +39,6 @@ goto home
 
 :home
 cls
-mode con cols=90 lines=38
 title Cato_bat
 color 8b
 echo. 欢迎使用 Cato_bat 1.0
@@ -58,8 +57,6 @@ goto home
 :cj
 color 8b
 cls
-set /P pz=请输入凭证：
-cls
 echo. ---------------------------------------接下来要做的--------------------------------------
 echo. =                                                                                       =
 echo. =                     请在启动 Cato 后，你大概会看到这样的一行命令                      =
@@ -69,11 +66,11 @@ echo. =                →然后将游戏的开放的端口、上方的邀请码发送给你的加入方← 
 echo. =                                                                                       =
 echo. -----------------------------------------------------------------------------------------
 echo.
-echo. 按任意键启动 Cato...
+set /P pz=请输入凭证启动 Cato：
 pause>nul
 color 2f
 
-call %appdata%\cato_bat\cato-client-windows-i386 -auth.token %pz%
+call %appdata%\cato_bat\cato-client-windows-i386 -auth.token "%pz%"
 
 color 4F
 echo. -----------------------------------------------------------------------------------------
@@ -88,14 +85,12 @@ goto cj
 :jr
 cls
 color 8b
-set /P pz=请输入凭证：
-cls
 echo. ---------------------------------------接下来要做的--------------------------------------
 echo. =                                                                                       =
 echo. =                                     在启动 Cato 后，                                  =
 echo. =                你需要在输入框中输入 net add 《1》 0.0.0.0:《2》 bridge，              =
 echo. =         →其中《1》要替换成创建方的邀请码，《2》要替换成创建方发的游戏端口←          =
-echo. =               如输入 net add 100663322 0.0.0.0:25565，然后你会看到此输出              =
+echo. =           如输入 net add 100663322 0.0.0.0:25565 bridge，然后你会看到此输出           =
 echo. =                 PIPE-TCP: Connection established on (0.0.0.0:25565)                   =
 echo. =                             然后只需启动游戏（不限制启动器），                        =
 echo. =                                打开多人游戏》直接连接，                               =
@@ -104,11 +99,11 @@ echo. =    加入房间即可（必须正版账户和外置登录账户，关于此问题请查看http://8r5.
 echo. =                                                                                       =
 echo. -----------------------------------------------------------------------------------------
 echo.
-echo. 按任意键启动 Cato...
+set /P pz=请输入凭证启动 Cato：
 pause>nul
 color 2f
 
-call %appdata%\cato_bat\cato-client-windows-i386.exe -auth.token %pz%
+call %appdata%\cato_bat\cato-client-windows-i386.exe -auth.token "%pz%"
 
 color 4F
 echo. -----------------------------------------------------------------------------------------
